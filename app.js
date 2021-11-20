@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, {"Content-Type":"text/html"});
 
     let url = req.url;
-    if(url === '/index') {
+    if(url === '/') {
         fs.readFile(path.join(__dirname, 'index.html'), (error,data) => {
             if (error) throw error
             res.end(data)
