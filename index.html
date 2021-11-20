@@ -23,6 +23,7 @@
 
             color: #052F45;
         }
+
         h2 {
             width: 1157px;
             height: 445px;
@@ -39,7 +40,69 @@
             width: 550px;
             height: 112px;
             left: 551px;
-            top: 20%;
+            top: 10%;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 45px;
+            /* or 141% */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        h3 {
+            width: 1157px;
+            height: 455px;
+            left: 38px;
+            top: 777px;
+
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #74DCFD;
+            box-shadow: -5px 5px 8px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        h3 div {
+            position: relative;
+            width: 417px;
+            height: 90px;
+            left: 122px;
+            top: 10%;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 45px;
+            /* or 141% */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        h4 {
+            width: 1157px;
+            height: 455px;
+            left: -22px;
+            top: 1262px;
+
+            background: #FFC857;
+            box-shadow: -5px 5px 8px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+        }
+
+        h4 div {
+            position: relative;
+            width: 550px;
+            height: 112px;
+            left: 551px;
+            top: 10%;
 
             font-family: Poppins;
             font-style: normal;
@@ -62,11 +125,20 @@
             background: #052F45;
             box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 30px;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 24px;
+            line-height: 36px;
+            text-align: center;
+            color: #FFFFFF;
         }
-        
+
         body {
             background: #FFFAF1;
-        }      
+        }
+
     </style>
 </head>
 <body>
@@ -77,44 +149,38 @@
     <h1>ID-ing garbage for our beautiful ID</h1>
         <h2>
             <div>
-                <p>Learn how to recycle <br> different types of waste!</p>
-
-                <button onclick="location.href='/camera'">ID my item!</button>
+                <p>Learn how to recycle <br> different types of waste! <br>
+                    <font size="4">Which type of plastic is recyclable?</font><br>
+                    <font size="4">How do you recycle food waste?</font><br>
+                    <font size="4">Find out more about it here!</font><br>
+                </p>
+                
+                <button onclick="location.href='/info'">Teach me!</button>
             </div>
         </h2>
 
+    <h3>
+        <div>
+            <p>See how you can recycle <br> your things!<br>
+                <font size="4">Use your camera or upload a picture from</font><br>
+                <font size="4">your device to get started on your</font><br>
+                <font size="4">recycling journey!</font><br>
+            </p>
 
-    <table>
-        <tr>
-            <td rowspan="3">
+            <button onclick="location.href='/camera'">ID my item!</button>
+        </div>
+    </h3>
 
-            </td>
-            <th>See how you can recycle the items you have!</th>
-        </tr>
-        <tr>
-            <td align="justify">Use your camera or upload a picture from your device to get started on your 
-                recycling journey!</td>
-        </tr>
-        <tr>
-            <td align="center"><button onclick="location.href='/camera'">ID my item!</button></td>
-        </tr>
-    </table>
+    <h4>
+        <div>
+            <p>Find your closest <br> waste bank <br>
+                <font size="4">Locate your nearest waste bank</font><br>
+                <font size="4">for you to drop in your recyclables and</font><br>
+                <font size="4">earn some extra cash!</font><br>                
+            </p>
 
-    <table>
-        <tr>
-            <td rowspan="3">
-
-            </td>
-            <th>Find your closest recycling center!</th>
-        </tr>
-        <tr>
-            <td align="justify">Locate your nearest recycling facility 
-                for you to drop in your recyclables!</td>
-        </tr>
-        <tr>
-            <td align="center"><button onclick="location.href='/location'">Check them now!</button></td>
-        </tr>
-    </table>
-
+            <button onclick="location.href='/location'">Check them now!</button>
+        </div>
+    </h4>
 </body>
 </html>
