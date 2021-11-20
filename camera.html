@@ -1,77 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Camera</title> 
-    <style>
-        .topnav {
-            position: absolute;
-            width: 100%;
-            height: 8%;
-            left: 0px;
-            top: 0px;
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="camera.css" />
+        <title>Camera</title>
+    </head>
+    <body>
+        <nav>
+            <a href="/"> Home </a>
+            <a href="/about"> About us</a>
+        </nav>
+        <h1>ID My Waste!</h1>
+        <p>
+            Not sure what sort of waste you have? Use our nifty AI to find out!
+        </p>
+        <div class="contentarea">
+            <div class="upload">
+                <form action="/action_page.php">
+                    <h3>Upload an Image</h3>
+                    <input type="file" id="img" name="img" accept="image/*" />
+                </form>
+                <h3>OR</h3>
+            </div>
+            <div class="camera">
+                <h3>Take a Photo</h3>
+                <video id="video">Video stream not available.</video>
+            </div>
+            <div><button id="startbutton">Snap</button></div>
+            <canvas id="canvas"></canvas>
+            <div class="output">
+                <img id="photo" alt="photo will appear in this box." />
+            </div>
+        </div>
+        <button onclick="">detect item</button>
+        <button onclick="">info</button>
+        <button onclick="">locate</button>
+        <script>
+            (function () {
+                var width = 320; // We will scale the photo width to this
+                var height = 0; // This will be computed based on the input stream
 
-            font-family: 'Open Sans', sans-serif;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 18px;
-            line-height: 27px;
-            text-align: center;
+                var streaming = false;
 
-            background: #FFFFFF;
-            box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.25);
-        }
-        .logoNav {
-            position: absolute;
-            width: 167px;
-            height: 45px;
-            left: 0px;
-            top: 22px;
+                var video = null;
+                var canvas = null;
+                var photo = null;
+                var startbutton = null;
 
-            color: #000000;
-        }
-        .homeNav {
-            position: absolute;
-            width: 167px;
-            height: 45px;
-            left: 94px;
-            top: 22px;
+                function startup() {
+                    video = document.getElementById("video");
+                    canvas = document.getElementById("canvas");
+                    photo = document.getElementById("photo");
+                    startbutton = document.getElementById("startbutton");
 
-            color: #000000;
-        }
-        .aboutUsNav {
-            position: absolute;
-            right: 8%;
-            top: 22px;
-            color: rgba(0, 0, 0, 0.5);
-        }
-        h1 {
-            width: 100%;
-            height: 112px;
-            left: 93px;
-            top: 147px;
+                    navigator.mediaDevices
+                        .getUserMedia({
+                            video: true,
+                            audio: false,
+                        })
+                        .then(function (stream) {
+                            video.srcObject = stream;
+                            video.play();
+                        })
+                        .catch(function (err) {
+                            console.log("An error occurred: " + err);
+                        });
 
-            font-family: Open Sans Condensed;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 64px;
-            line-height: 160px;
-            /* or 70% */
+                    video.addEventListener(
+                        "canplay",
+                        function (ev) {
+                            if (!streaming) {
+                                height =
+                                    video.videoHeight /
+                                    (video.videoWidth / width);
 
-            text-align: center;
+                                if (isNaN(height)) {
+                                    height = width / (4 / 3);
+                                }
 
-            color: #052F45;
-        }
-    </style>
-</head>
-<body>
-    <div class="topnav">
-        <div class="logoNav"><a> Logo_here </a></div>
-        <div class="homeNav"><a href= "/"> Home </a></div>
-        <div class="aboutUsNav"> <a href= "/about"> About us</a></div> 
-    </div>
-    <h1> Camera </h1>
-</body>
+                                video.setAttribute("width", width);
+                                video.setAttribute("height", height);
+                                canvas.setAttribute("width", width);
+                                canvas.setAttribute("height", height);
+                                streaming = true;
+                            }
+                        },
+                        false
+                    );
+
+                    startbutton.addEventListener(
+                        "click",
+                        function (ev) {
+                            takepicture();
+                            ev.preventDefault();
+                        },
+                        false
+                    );
+
+                    clearphoto();
+                }
+
+                function clearphoto() {
+                    var context = canvas.getContext("2d");
+                    context.fillStyle = "#AAA";
+                    context.fillRect(0, 0, canvas.width, canvas.height);
+
+                    var data = canvas.toDataURL("image/png");
+                    photo.setAttribute("src", data);
+                }
+
+                function takepicture() {
+                    var context = canvas.getContext("2d");
+                    if (width && height) {
+                        canvas.width = width;
+                        canvas.height = height;
+                        context.drawImage(video, 0, 0, width, height);
+
+                        var data = canvas.toDataURL("image/png");
+                        photo.setAttribute("src", data);
+                    } else {
+                        clearphoto();
+                    }
+                }
+
+                window.addEventListener("load", startup, false);
+            })();
+        </script>
+    </body>
 </html>
