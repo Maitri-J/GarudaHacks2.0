@@ -5,6 +5,69 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Page</title> 
+    <style>
+        h1 {
+            width: 100%;
+            height: 112px;
+            left: 93px;
+            top: 147px;
+
+            font-family: Open Sans Condensed;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 64px;
+            line-height: 45px;
+            /* or 70% */
+
+            text-align: center;
+
+            color: #052F45;
+        }
+        h2 {
+            width: 1157px;
+            height: 445px;
+            left: 50px;
+            top: 292px;
+
+            background: #77CD9A;
+            box-shadow: -5px 5px 8px 5px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+        }
+
+        h2 div {
+            position: relative;
+            width: 550px;
+            height: 112px;
+            left: 551px;
+            top: 20%;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 45px;
+            /* or 141% */
+
+            text-align: center;
+
+            color: #000000;
+        }
+
+        button {
+            width: 328px;
+            height: 80px;
+            left: 662px;
+            top: 591px;
+
+            background: #052F45;
+            box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 30px;
+        }
+        
+        body {
+            background: #FFFAF1;
+        }      
+    </style>
 </head>
 <body>
     <nav>
@@ -12,28 +75,19 @@
         <a href= "/about"> About us</a>  
     </nav>
     <h1>ID-ing garbage for our beautiful ID</h1>
+        <h2>
+            <div>
+                <p>Learn how to recycle <br> different types of waste!</p>
+
+                <button onclick="location.href='/camera'">ID my item!</button>
+            </div>
+        </h2>
+
 
     <table>
         <tr>
             <td rowspan="3">
-                <img src="Images/pic1.png">
-            </td>
-            <th>Learn how to recycle different types of rubbish!</th>
-        </tr>
-        <tr>
-            <td align="center">Which type of plastic is recyclable? 
-                How do you recycle food waste? 
-                Find out more about it here!</td>
-        </tr>
-        <tr>
-            <td align="center"><button onclick="location.href='/info'">Teach me!</button></td>
-        </tr>
-    </table>
 
-    <table>
-        <tr>
-            <td rowspan="3">
-                <img src="Images/pic2.png">
             </td>
             <th>See how you can recycle the items you have!</th>
         </tr>
@@ -49,7 +103,7 @@
     <table>
         <tr>
             <td rowspan="3">
-                <img src="Images/pic3.png">
+
             </td>
             <th>Find your closest recycling center!</th>
         </tr>
@@ -58,7 +112,7 @@
                 for you to drop in your recyclables!</td>
         </tr>
         <tr>
-            <td align="center"><button onclick="location.href='/locate'">Check them now!</button></td>
+            <td align="center"><button onclick="location.href='/location'">Check them now!</button></td>
         </tr>
     </table>
 
