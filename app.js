@@ -1,18 +1,25 @@
 const http = require("http");
 const fs = require("fs");
+const path = require('path')
 const port = 3000;
 
 const server = http.createServer((req, res) => {
     res.writeHead(200, {"Content-Type":"text/html"});
-    fs.readFile("index.html", (error,data) => {
-        if (error) {
-            res.writeHead(404);
-            res.write("Error: File Not Found");
-        } else {
-            res.write(data);
-        }
-    res.end();
-    })
+
+    let url = req.url;
+    if(url === '/index') {
+        fs.readFile(path.join(__dirname, 'index.html'), (error,data) => {
+            if (error) throw error
+            res.end(data)
+        })
+    }  
+    else if (url === '/about') {
+        fs.readFile(path.join(__dirname, 'about.html'), (error,data) => {
+            if (error) throw error
+            res.end(data)
+        })
+    } 
+
 });
 
 server.listen(port, (error) => {
