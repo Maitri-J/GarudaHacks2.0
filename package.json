@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Maitri-J/GarudaHacks2.0#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "node": "^17.1.0"
   }
 }
