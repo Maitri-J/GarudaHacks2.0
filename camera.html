@@ -6,12 +6,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="camera.css" />
         <title>Camera</title>
+        <style>
+            .topnav {
+                position: absolute;
+                width: 100%;
+                height: 8%;
+                left: 0px;
+                top: 0px;
+    
+                font-family: 'Open Sans', sans-serif;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 27px;
+                text-align: center;
+    
+                background: #FFFFFF;
+                box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.25);
+            }
+            .logoNav {
+                position: absolute;
+                width: 167px;
+                height: 45px;
+                left: 0px;
+                top: 22px;
+    
+                color: #000000;
+            }
+            .homeNav {
+                position: absolute;
+                width: 167px;
+                height: 45px;
+                left: 140px;
+                top: 22px;
+    
+                color: #000000;
+            }
+            .aboutUsNav {
+                position: absolute;
+                right: 8%;
+                top: 22px;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        </style>
     </head>
     <body>
-        <nav>
-            <a href="/"> Home </a>
-            <a href="/about"> About us</a>
-        </nav>
+        <div class="topnav">
+            <div class="logoNav"><a> Logo_here </a></div>
+            <div class="homeNav">Sampah.id | <a href= "/"> Home </a></div>
+            <div class="aboutUsNav"> <a href= "/about"> About us</a></div> 
+        </div>
         <h1>ID My Waste!</h1>
         <p>
             Not sure what sort of waste you have? Use our nifty AI to find out!
