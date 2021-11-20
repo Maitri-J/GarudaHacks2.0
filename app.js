@@ -19,7 +19,24 @@ const server = http.createServer((req, res) => {
             res.end(data)
         })
     } 
-
+    else if (url === '/info') {
+        fs.readFile(path.join(__dirname, 'info.html'), (error,data) => {
+            if (error) throw error
+            res.end(data)
+        })
+    } 
+    else if (url === '/camera') {
+        fs.readFile(path.join(__dirname, 'camera.html'), (error,data) => {
+            if (error) throw error
+            res.end(data)
+        })
+    } 
+    else if (url === '/locate') {
+        fs.readFile(path.join(__dirname, 'locate.html'), (error,data) => {
+            if (error) throw error
+            res.end(data)
+        })
+    } 
 });
 
 server.listen(port, (error) => {
