@@ -60,14 +60,49 @@
             body {
                 background-color: #fffaf1;
                 font-family: Poppins;
-                text-align: center;
+                font-style: normal;
+                font-weight: lighter;
             }
 
             .section {
                 align-items: center;
-                padding-left: 300px;
+                padding-left: 450px;
                 padding-right: 300px;
                 padding-bottom: 50px;
+            }
+
+            .uploadBox {
+                position: absolute;
+                width: 750px;
+                height: 345px;
+                left: 450px;
+                top: 280px;
+
+                background: #FFFFFF;
+                box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.25);
+                border-radius: 30px;
+            }
+
+            .upload {
+                position: relative;
+                width: 228px;
+                height: 33.67px;
+                left: 63px;
+                top: 0;
+            }
+
+            .upload button{
+                background: #052F45;
+                box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 30px;
+            }
+            .cameraBox{                
+                position: absolute;
+                width: 340px;
+                display: inline-block;
+                height: 33.67px;
+                left: 400px;
+                top: 0;
             }
 
             .outer {
@@ -86,6 +121,7 @@
             h2 {
                 padding-top: 20px;
                 padding-bottom: 5px;
+                font-size: 18px;
             }
 
             #video,
@@ -135,13 +171,12 @@
                 float: right;
             }
 
-            #info,
-            #locate,
-            #detect {
+            .detect {
+                position: relative;
                 width: 328px;
                 height: 60px;
                 left: 662px;
-                top: 591px;
+                top: 100px;
 
                 background: #052f45;
                 box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
@@ -154,6 +189,48 @@
                 line-height: 36px;
                 text-align: center;
                 color: #ffffff;
+            }
+
+            .info {
+
+                position: relative;
+                width: 328px;
+                height: 60px;
+                left: 455px;
+                top: 100px;
+
+                background: #052f45;
+                box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 30px;
+
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 36px;
+                text-align: center;
+                color: #ffffff;
+            }
+
+            .locate {
+                position: relative;
+                width: 328px;
+                height: 60px;
+                left: 532px;
+                top: 100px;
+
+                background: #052f45;
+                box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 30px;
+
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 36px;
+                text-align: center;
+                color: #ffffff;
+
             }
             .loader {
                 margin: auto;
@@ -177,6 +254,12 @@
             #result {
                 padding: 30px;
             }
+
+            .aText {
+                position: relative;
+                text-align: center;
+                padding-left: 13%;
+            }
         </style>
     </head>
     <body>
@@ -193,11 +276,15 @@
                 <a href="/about"> About us</a>
             </div>
         </div>
-        <h1>ID My Waste!</h1>
-        <h2>
-            Not sure what sort of waste you have? Use our nifty AI to find out!
-        </h2>
+        <div class="section">
+            <br><br><br><br><br>
+            <h1>ID My Waste!</h1>
+            <p>
+                Not sure what sort of waste you have? Use our nifty AI to find out!
+            </p>
+        </div>
         <div class="contentarea">
+            <div class="uploadBox">
             <div class="upload">
                 <h3>Upload an Image</h3>
                 <input
@@ -208,24 +295,32 @@
                     onchange="document.getElementById('photo').src = window.URL.createObjectURL(this.files[0])"
                 />
             </div>
-            <h3>OR</h3>
+
+            <h3><br><br><br>OR</h3>
+            
+            <div class="cameraBox">
             <div class="camera">
                 <h3>Take a Photo</h3>
                 <video id="video">Video stream not available.</video>
             </div>
+
             <div><button id="startbutton">Snap</button></div>
             <canvas id="canvas"></canvas>
+            </div>
+            </div>div>
+
             <div class="output">
                 <img id="photo" alt="photo will appear in this box." />
             </div>
         </div>
+
         <div style="padding-top: 25px;">
-            <button id="detect" onclick="detect()">ID my waste!</button>
+            <button class="detect" onclick="detect()">ID my waste!</button>
         </div>
         <div id="result"></div>
         <div>
-            <button id="info" onclick="">How do I recycle this?</button>
-            <button id="locate" onclick="">Find a recycling center!</button>
+            <button class="info" onclick="">How do I recycle this?</button>
+            <button class="locate" onclick="">Find a recycling center!</button>
         </div>
         <script>
             // Detect function - this is not according to the functionality, for purpose of demonstration only.
@@ -238,9 +333,8 @@
                 div.className = "loader";
                 res.appendChild(div);
                 const text = document.createElement("p");
-                text.textContent =
-                    "We are 96% sure that your image is an Apple! You can find out how to recycle one of these bad boys, or find your local recycling center to start recycling!";
-
+                text.innerHTML =
+                    "<div class=\"aText\"><br /><br /><br /><p>We are <strong>96%</strong> sure that your image is an <strong>Apple</strong>! <br />You can find out how to recycle one of these bad boys, <br />&ensp;or find your local recycling center to start recycling!</p></div>";
                 setTimeout(function () {
                     res.removeChild(div);
                     res.appendChild(text);
