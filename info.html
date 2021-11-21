@@ -8,6 +8,7 @@
     <title>Information</title>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
         .topnav {
             position: absolute;
             width: 100%;
@@ -15,7 +16,7 @@
             left: 0px;
             top: 0px;
 
-            font-family: 'Open Sans', sans-serif;
+            font-family: Poppins;
             font-style: normal;
             font-weight: normal;
             font-size: 18px;
@@ -25,7 +26,16 @@
             background: #FFFFFF;
             box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.25);
         }
-
+        .topnav a:link {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+        }
+        .topnav a:visited {
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            color:rgb(0, 0, 0);
+        }
         .logoNav {
             position: absolute;
             width: 167px;
@@ -35,22 +45,20 @@
 
             color: #000000;
         }
-
         .homeNav {
             position: absolute;
-            width: 167px;
+            width: 200px;
             height: 45px;
             left: 140px;
             top: 22px;
+            text-align: right;
 
             color: #000000;
         }
-
-        .aboutUsNav {
+        .leftNav {
             position: absolute;
             right: 8%;
             top: 22px;
-            color: rgba(0, 0, 0, 0.5);
         }
 
         body {
@@ -134,9 +142,15 @@
 
 <body>
     <div class="topnav">
-        <div class="logoNav"><a> Logo_here </a></div>
-        <div class="homeNav">Sampah.id | <a href="/"> Home </a></div>
-        <div class="aboutUsNav"> <a href="/about"> About us</a></div>
+        <div class="logoNav"> Logo_here </div>
+        <div class="homeNav"> Sampah.id &ensp;|&ensp; <a href= "/">Home</a></div>
+
+        <div class="leftNav">
+            <a href= "/info">More Info</a>&ensp;|&ensp;
+            <a href= "/camera">Scan Item</a>&ensp;|&ensp;
+            <a href= "/locate">Bank Sampah</a>&ensp;|&ensp;
+            <a href= "/about"> About us</a>
+        </div> 
     </div>
     <div class="section">
         <br><br><br><br><br>

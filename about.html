@@ -6,6 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About us</title> 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+        .topnav {
+            position: absolute;
+            width: 100%;
+            height: 8%;
+            left: 0px;
+            top: 0px;
+
+            font-family: Poppins;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 27px;
+            text-align: center;
+
+            background: #FFFFFF;
+            box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.25);
+        }
+        .topnav a:link {
+            color: rgba(0, 0, 0, 0.8);
+            text-decoration: none;
+        }
+        .topnav a:visited {
+            text-decoration: none;
+        }
+        .topnav a:hover {
+            color:rgb(0, 0, 0);
+        }
+        .logoNav {
+            position: absolute;
+            width: 167px;
+            height: 45px;
+            left: 0px;
+            top: 22px;
+
+            color: #000000;
+        }
+        .homeNav {
+            position: absolute;
+            width: 200px;
+            height: 45px;
+            left: 140px;
+            top: 22px;
+            text-align: right;
+
+            color: #000000;
+        }
+        .leftNav {
+            position: absolute;
+            right: 8%;
+            top: 22px;
+        }
+
 h1 {
     position: absolute;
     width: 1157px;
@@ -24,10 +77,17 @@ h1 div {
     </style>
 </head>
 <body>
-    <nav>
-        <a href= "/"> Home </a>  
-        <a href= "/about"> About us</a>  
-    </nav>
+    <div class="topnav">
+        <div class="logoNav"> Logo_here </div>
+        <div class="homeNav"> Sampah.id &ensp;|&ensp; <a href= "/">Home</a></div>
+
+        <div class="leftNav">
+            <a href= "/info">More Info</a>&ensp;|&ensp;
+            <a href= "/camera">Scan Item</a>&ensp;|&ensp;
+            <a href= "/locate">Bank Sampah</a>&ensp;|&ensp;
+            <a href= "/about"> About us</a>
+        </div> 
+    </div>
 
     <h1><div>Test</div></h1>
 </body>
