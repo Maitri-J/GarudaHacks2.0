@@ -24,6 +24,10 @@ const server = http.createServer((req, res) => {
             if (error) throw error
             res.end(data)
         })
+        fs.readFile('organic.jpeg', function (err, data) {
+            if (err) throw err;
+            res.write(data);
+        })
     } 
     else if (url === '/camera') {
         fs.readFile(path.join(__dirname, 'camera.html'), (error,data) => {
