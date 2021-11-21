@@ -4,7 +4,8 @@
   "description": "hi humans.",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "camera": "camera.js"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,8 @@
   },
   "homepage": "https://github.com/Maitri-J/GarudaHacks2.0#readme",
   "dependencies": {
+    "@google-cloud/vision": "^2.4.0",
     "express": "^4.17.1",
-    "node": "^17.1.0",
-    "webcam-easy": "^1.0.5"
+    "node": "^17.1.0"
   }
 }
