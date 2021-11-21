@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Camera</title>
+        <script type="text/javascript" src="camera.js"></script>
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
             .topnav {
@@ -34,14 +35,12 @@
             .topnav a:hover {
                 color: rgb(0, 0, 0);
             }
-            .logoNav {
+            .logoNav img {
                 position: absolute;
-                width: 167px;
-                height: 45px;
-                left: 0px;
-                top: 22px;
-
-                color: #000000;
+                width: 45px;
+                height: 46px;
+                left: 100px;
+                top: 10px;
             }
             .homeNav {
                 position: absolute;
@@ -141,7 +140,7 @@
     </head>
     <body>
         <div class="topnav">
-            <div class="logoNav">Logo_here</div>
+            <div class="logoNav"><img src="/Images/logo.png" alt="logo" /></div>
             <div class="homeNav">
                 Sampah.id &ensp;|&ensp; <a href="/">Home</a>
             </div>
@@ -187,6 +186,35 @@
             <button id="locate" onclick="">locate</button>
         </div>
         <script>
+            // const vision = require("@google-cloud/vision");
+
+            // // Creates a client
+            // const client = new vision.ImageAnnotatorClient({
+            //     keyFilename: "visionAPIKey.json",
+            // });
+
+            // // Detect function, output json from photo
+            // function detect(img) {
+            //     // photo = document.getElementById("photo");
+
+            //     // Performs label detection on the image file
+            //     client
+            //         .labelDetection(img) //temporary img, use img from id=photo "./Images/apple.jpg"
+            //         .then((results) => {
+            //             const labels = results[0].labelAnnotations;
+
+            //             console.log("Labels:");
+            //             labels.forEach((label) => console.log(label));
+            //             //console.log(results);
+            //         })
+            //         .catch((err) => {
+            //             console.error("ERROR:", err);
+            //         });
+            // }
+
+            // // manual testing label detection, 
+            // detect("./Images/apple.jpg");
+
             (function () {
                 var width = 320; // We will scale the photo width to this
                 var height = 0; // This will be computed based on the input stream
