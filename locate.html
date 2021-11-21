@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDo2D2IF2jBJQ7nH62Sm4AyidwR5SZy9S0&callback=initMap"></script>
+    <!--<script src="locate.js"></script>-->
     <title>Locate</title> 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
@@ -62,7 +63,7 @@
 
     </style>
 </head>
-<body>
+<body onload="startUp()">
     <div class="topnav">
         <div class="logoNav"> Logo_here </div>
         <div class="homeNav"> Sampah.id &ensp;|&ensp; <a href= "/">Home</a></div>
@@ -75,5 +76,6 @@
         </div> 
     </div>
     <h1> Locate </h1>
+    <div id="map"></div>
 </body>
 </html>
