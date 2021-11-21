@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Camera</title>
-        <script type="text/javascript" src="camera.js"></script>
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
             .topnav {
@@ -186,34 +185,10 @@
             <button id="locate" onclick="">locate</button>
         </div>
         <script>
-            // const vision = require("@google-cloud/vision");
-
-            // // Creates a client
-            // const client = new vision.ImageAnnotatorClient({
-            //     keyFilename: "visionAPIKey.json",
-            // });
-
-            // // Detect function, output json from photo
-            // function detect(img) {
-            //     // photo = document.getElementById("photo");
-
-            //     // Performs label detection on the image file
-            //     client
-            //         .labelDetection(img) //temporary img, use img from id=photo "./Images/apple.jpg"
-            //         .then((results) => {
-            //             const labels = results[0].labelAnnotations;
-
-            //             console.log("Labels:");
-            //             labels.forEach((label) => console.log(label));
-            //             //console.log(results);
-            //         })
-            //         .catch((err) => {
-            //             console.error("ERROR:", err);
-            //         });
-            // }
-
-            // // manual testing label detection, 
-            // detect("./Images/apple.jpg");
+            // Detect function, output json from photo
+            function detect() {
+                console.log("Item detected");
+            }
 
             (function () {
                 var width = 320; // We will scale the photo width to this
