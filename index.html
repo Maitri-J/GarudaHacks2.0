@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index Page</title> 
+    <title>Index Page</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
         .topnav {
             position: absolute;
             width: 100%;
@@ -24,16 +26,20 @@
             background: #FFFFFF;
             box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.25);
         }
+
         .topnav a:link {
             color: rgba(0, 0, 0, 0.8);
             text-decoration: none;
         }
+
         .topnav a:visited {
             text-decoration: none;
         }
+
         .topnav a:hover {
-            color:rgb(0, 0, 0);
+            color: rgb(0, 0, 0);
         }
+
         .logoNav {
             position: absolute;
             width: 167px;
@@ -43,6 +49,7 @@
 
             color: #000000;
         }
+
         .homeNav {
             position: absolute;
             width: 200px;
@@ -53,10 +60,35 @@
 
             color: #000000;
         }
+
         .leftNav {
             position: absolute;
             right: 8%;
             top: 22px;
+        }
+
+        .image1 {
+            position: relative;
+            width: 550px;
+            height: 112px;
+            left: 180px;
+            top: 0%;
+        }
+
+        .image2 {
+            position: relative;
+            width: 550px;
+            height: 112px;
+            left: 45%;
+            top: 0%;
+        }
+
+        .image3 {
+            position: relative;
+            width: 550px;
+            height: 112px;
+            left: 180px;
+            top: 0%;
         }
 
         h1 {
@@ -94,7 +126,7 @@
             width: 550px;
             height: 112px;
             left: 60%;
-            top: 10%;
+            top: -20%;
 
             font-family: Poppins;
             font-style: normal;
@@ -127,7 +159,7 @@
             width: 417px;
             height: 90px;
             left: 122px;
-            top: 10%;
+            top: -20%;
 
             font-family: Poppins;
             font-style: normal;
@@ -158,7 +190,7 @@
             width: 550px;
             height: 112px;
             left: 60%;
-            top: 10%;
+            top: -20%;
 
             font-family: Poppins;
             font-style: normal;
@@ -190,6 +222,7 @@
             text-align: center;
             color: #FFFFFF;
         }
+
         button:hover {
             background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), #052F45;
         }
@@ -197,39 +230,38 @@
         body {
             background: #FFFAF1;
         }
-
     </style>
 </head>
+
 <body>
     <div class="topnav">
-        <div class="logoNav"> <img src="/Images/logo.png" alt="logo"/> </div>
-        <div class="homeNav"> Sampah.id &ensp;|&ensp; <a href= "/">Home</a></div>
+        <div class="logoNav"> test </div>
+        <div class="homeNav"> Sampah.id &ensp;|&ensp; <a href="/">Home</a></div>
 
         <div class="leftNav">
-            <a href= "/info">More Info</a>&ensp;|&ensp;
-            <a href= "/camera">Scan Item</a>&ensp;|&ensp;
-            <a href= "/locate">Bank Sampah</a>&ensp;|&ensp;
-            <a href= "/about"> About us</a>
-        </div> 
+            <a href="/info">More Info</a>&ensp;|&ensp;
+            <a href="/camera">Scan Item</a>&ensp;|&ensp;
+            <a href="/locate">Bank Sampah</a>&ensp;|&ensp;
+            <a href="/about"> About us</a>
+        </div>
     </div>
 
     <h1>ID-ing garbage for our beautiful ID</h1>
-    <img src="/Images/pic1.png" alt="pic1"/>
-    <img src="/Images/pic2.png" alt="pic2"/>
-    
     <h2>
+        <div class="image1"><img src="/Images/pic1.png" alt="pic1"/></div>
         <div>
             <p>Learn how to recycle <br> different types of waste! <br>
                 <font size="4">Which type of plastic is recyclable?</font><br>
                 <font size="4">How do you recycle food waste?</font><br>
                 <font size="4">Find out more about it here!</font><br>
             </p>
-            
+
             <button onclick="location.href='/info'">Teach me!</button>
         </div>
     </h2>
 
     <h3>
+        <div class="image2"><img src="/Images/pic2.png" alt="pic2"/></div>
         <div>
             <p>See how you can recycle <br> your things!<br>
                 <font size="4">Use your camera or upload a picture from</font><br>
@@ -242,15 +274,17 @@
     </h3>
 
     <h4>
+        <div class="image3"><img src="/Images/pic3.png" alt="pic3"/></div>
         <div>
             <p>Find your closest <br> waste bank <br>
                 <font size="4">Locate your nearest waste bank</font><br>
                 <font size="4">for you to drop in your recyclables and</font><br>
-                <font size="4">earn some extra cash!</font><br>                
+                <font size="4">earn some extra cash!</font><br>
             </p>
 
             <button onclick="location.href='/locate'">Check them now!</button>
         </div>
     </h4>
 </body>
+
 </html>
