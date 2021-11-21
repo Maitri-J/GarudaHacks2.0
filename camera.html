@@ -59,8 +59,7 @@
 
             body {
                 background-color: #fffaf1;
-                font-family: "Trebuchet MS", "Lucida Sans Unicode",
-                    "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+                font-family: Poppins;
                 text-align: center;
             }
 
@@ -135,6 +134,49 @@
             #locate {
                 float: right;
             }
+
+            #info,
+            #locate,
+            #detect {
+                width: 328px;
+                height: 60px;
+                left: 662px;
+                top: 591px;
+
+                background: #052f45;
+                box-shadow: -4px 4px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 30px;
+
+                font-family: Poppins;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 36px;
+                text-align: center;
+                color: #ffffff;
+            }
+            .loader {
+                margin: auto;
+                border: 16px solid #f3f3f3; /* Light grey */
+                border-top: 16px solid #3498db; /* Blue */
+                border-radius: 50%;
+                width: 50px;
+                height: 50px;
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+            #result {
+                padding: 15px;
+            }
         </style>
     </head>
     <body>
@@ -152,9 +194,9 @@
             </div>
         </div>
         <h1>ID My Waste!</h1>
-        <p>
+        <h2>
             Not sure what sort of waste you have? Use our nifty AI to find out!
-        </p>
+        </h2>
         <div class="contentarea">
             <div class="upload">
                 <h3>Upload an Image</h3>
@@ -178,16 +220,31 @@
             </div>
         </div>
         <div>
-            <button onclick="detect()">detect item</button>
+            <button id="detect" onclick="detect()">ID my waste!</button>
         </div>
+        <div id="result"></div>
         <div>
-            <button id="info" onclick="">info</button>
-            <button id="locate" onclick="">locate</button>
+            <button id="info" onclick="">How do I recycle this?</button>
+            <button id="locate" onclick="">Find a recycling center!</button>
         </div>
         <script>
-            // Detect function, output json from photo
+            // Detect function - this is not according to the functionality, for purpose of demonstration only.
             function detect() {
-                console.log("Item detected");
+                const res = document.getElementById("result");
+                res.innerHTML = '';
+
+                const div = document.createElement("div");
+                div.id = "loader";
+                div.className = "loader";
+                res.appendChild(div);
+                const text = document.createElement("p");
+                text.textContent =
+                    "We are 96% sure that your image is an Apple! You can find out how to recycle one of these bad boys, or find your local recycling center to start recycling!";
+
+                setTimeout(function () {
+                    res.removeChild(div);
+                    res.appendChild(text);
+                }, 2500);
             }
 
             (function () {
